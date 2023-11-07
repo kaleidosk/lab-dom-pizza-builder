@@ -118,23 +118,27 @@ function renderPrice() {
   // Display a list with all the items that are selected with the buttons 
   // Display a number which represents the total price of all those selected ingredients. 
   // Check if the state is true or not, 
-  // Loop through each one a see. 
+  // Loop through each one  
   //Then work with the DOM and manipulate those innerHTML
 
+ const itemsSelected=document.querySelector ('.panel.price ul')
+  itemsSelected.innerHTML = ''
+const ingredientsArray = Object.keys(state)
+  //ingredientsArray.filter (ingredient => ingredient.state === true)??
+for(let i=0; i<ingredientsArray.length; i++){
+  if (ingredients.state===true){
+    const oneItemSelected = document.createElement ('li')
+    oneItemSelected.innerText = `${ingredients.ingredient.price} ${ingredients.ingredient.name}`
+    itemsSelected.append(oneItemSelected)
+    let totalPrice= basePrice
+    totalPrice += ingredients.ingredient.price
+    const price = document.querySelector('.panel.price strong')
+    price.textContent = `${totalPrice}`
 
- //const itemsList=document.querySelector ('.panel price ul')
-  //itemsList.innerHTML = ''
-  //let totalPrice = document.querySelector ('.panel price strong')
-  //totalPrice.innerHTML = ''
-  
-  //itemsList.forEach ((price) =>
-//  if (state === true){
-// totalPrice
- //   }
- // )
- 
   }
+}
 
+}
 
 renderEverything();
 
